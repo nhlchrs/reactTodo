@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, FlatList,ScrollView, TouchableOpacity,TextInput,Button } from 'react-native';
+import { LovePecentage } from './components/lovePercent';
 
 export default function App() {
   const [todo, setTodo]=useState([
-    {todoname:'NIhal', key:'1'},
+    {todoname:'Nihal', key:'1'},
     {todoname:'ratan', key:'2'},
-    {todoname:'himani', key:'3'}
+    {todoname:'Nihal', key:'3'}
   ])
   const pressHandler=(key)=>{
    
@@ -21,7 +22,7 @@ export default function App() {
   }
   const submitHandler=(text)=>{
    if(text==''){
-     alert("cantaff")
+     alert("can't Add")
    }
    else{
     setTodo((prevtodo)=>{
@@ -34,12 +35,13 @@ export default function App() {
     }
   return (
     <View style={styles.container}>
-      <Text>Todo App</Text>
+      {/* <Text>Todo App</Text>
      <TextInput placeholder="enter" onChangeText={changeHandler}></TextInput>
      <Button
      onPress={()=>submitHandler(text)}
      title='Add'
-     />
+     /> */}
+     
  {/* <ScrollView>
  {
         todo.map((item)=>{
@@ -51,15 +53,15 @@ export default function App() {
         })
       }
    </ScrollView> */}
-      <FlatList 
+      {/* <FlatList 
       data={todo}
       renderItem= {({item})=>(
         <TouchableOpacity onPress={()=>pressHandler(item.key)}>
       <Text>{item.todoname}{item.key}</Text>
       </TouchableOpacity>
       )}
-      />
-
+      /> */}
+<LovePecentage />
     </View>
   );
 }
@@ -67,7 +69,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+   
   },
 });
